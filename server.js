@@ -8,15 +8,12 @@ const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 const sess = {
   secret: 'Super secret secret',
   
-  //Set maxAge will check for idle screen. if it is more than 10 minuts. it will logged off.
   rolling: true, // <-- Set `rolling` to `true`
   cookie: {  
-      // expires = new Date(Date.now() + hour),
-      maxAge: 6000//1*60*60*1000
+      maxAge: 1*60*60*1000
   },
   resave: false,
   saveUninitialized: true,
