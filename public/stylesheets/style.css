@@ -12,8 +12,8 @@
 }
 /* Navigation and its anchor tag CSS */
 nav {
-    padding-top: 15px;
-    margin-right: 20px;
+    /* padding-top: 15px;
+    margin-right: 20px; */
     display: flex;
     justify-content: flex-end;
 }
@@ -39,7 +39,9 @@ body {
   line-height: 1.5;
   font-size: 16px;
 }
-
+h2{
+  margin-top: 20px!important;
+}
 h1,
 h2,
 h3,
@@ -59,10 +61,11 @@ main {
 
 p {
   font-size: 1rem;
-  padding-left: 1%;
+  padding: 0.5%;
+  margin: 0px;;
 }
 .meta{
-  padding-left: 1%;
+  padding-left: 0.5%;
   padding-bottom: 1%;
 }
 ul{
@@ -80,7 +83,7 @@ form label {
   font-size: 1.3rem;
   text-decoration:none;
   padding: 6px 5px;
-  width: 100%;
+  width: 98%;
   display: block;
   margin: 5px 0;
   border-radius: var(--border-radius);
@@ -194,6 +197,8 @@ form label {
 }
 .card-header  a{
   color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 .card-body {
   padding: 0.5%;
@@ -204,7 +209,15 @@ form label {
   justify-content: space-between;
 }
 
+.addNewPost{
+  width: 200px;
+  padding: 15px;
+  color: var(--primary);
+  background-color: var(--dark);
+  border-radius: 10px;
+  font-size: 1.2rem;
 
+}
 /* span{
   padding: 1%;
 } */
@@ -240,6 +253,11 @@ footer {
 textarea{
   width: 98%;
   height: 70px;
+}
+
+input{
+  width: 98%;
+  height: 30px;
 }
 #post-title{
   width: 98%;
