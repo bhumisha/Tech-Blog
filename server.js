@@ -11,10 +11,12 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
   secret: 'Super secret secret',
-  //rolling: true, // <-- Set `rolling` to `true`
+  
   //Set maxAge will check for idle screen. if it is more than 10 minuts. it will logged off.
+  rolling: true, // <-- Set `rolling` to `true`
   cookie: {  
-      maxAge: 1*60*60*1000
+      // expires = new Date(Date.now() + hour),
+      maxAge: 6000//1*60*60*1000
   },
   resave: false,
   saveUninitialized: true,
@@ -28,14 +30,18 @@ app.use(session(sess));
 //Helpers contains util files which have generic format functions.
 const helpers = require('./utils/helpers');
 
+//To set handle bar engine.
 const hbs = exphbs.create({ helpers });
 
+//To registering handlebar and set engine value.
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+//Express is used to make api calls.
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.use(require('./controllers/'));
 
