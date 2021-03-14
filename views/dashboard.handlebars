@@ -5,30 +5,23 @@
   <div class="post-header">
     <div>
     <h2>Your Posts</h2></div>
-    <p><a href="/dashboard/createpost" ><button class="addNewPost">+ New Post</button></a></p></div>
-  
+    
+    </div>
   <ul>
     {{#each posts as |post|}}
     <li>
-      {{!-- {{> post-info post=post callFrom=callFrom}} --}}
-
-
-        <article class="post">
+      <article class="post">
           <div class="card">
             <div class="card-header post-header">
               <a href="/dashboard/edit/{{post.id}}"> <div>{{title}}</div></a>
               <div class="comment-detail">{{format_date created_at}}</div>
               </div>              
           </div>
-        
         </article>
-
-
-
-      {{!-- <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a> --}}
     </li>
     {{/each}}
   </ul>
 </section>
 {{/if}}
 
+<p><a href="/dashboard/createpost" ><button class="addNewPost">+ New Post</button></a></p>

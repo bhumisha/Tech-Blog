@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//This router js is used to make all users related api post.
+
+
 
 // GET /api/users
 router.get("/",(req,res)=>{

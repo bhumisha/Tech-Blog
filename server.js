@@ -11,7 +11,11 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  //rolling: true, // <-- Set `rolling` to `true`
+  //Set maxAge will check for idle screen. if it is more than 10 minuts. it will logged off.
+  cookie: {  
+      maxAge: 1*60*60*1000
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -21,6 +25,7 @@ const sess = {
 
 app.use(session(sess));
 
+//Helpers contains util files which have generic format functions.
 const helpers = require('./utils/helpers');
 
 const hbs = exphbs.create({ helpers });
