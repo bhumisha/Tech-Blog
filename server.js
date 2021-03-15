@@ -39,9 +39,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+//Controllers is interface between model and view. It has api which connect to Db and get the model output and provide to view apis/ pages.
 app.use(require('./controllers/'));
 
+//Sequelize sync is always in sync with db changes.
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

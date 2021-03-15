@@ -4,6 +4,7 @@ require('dotenv').config();
 
 
 // create connection to our db
+//JAWSDB_URL URl is for heroku connection. On Heroku, we need to connect Database which perform our operation. 
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {

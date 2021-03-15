@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Comment extends Model {}
-
+//Comment model is used to store user post comments.
 Comment.init(
   {
     id: {

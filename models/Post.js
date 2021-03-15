@@ -23,7 +23,7 @@ Post.init(
         len: [10],
       }
     },
-    user_id: {
+    user_id: {//foreignKey 
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
