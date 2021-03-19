@@ -10,17 +10,15 @@ const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
   secret: 'Super secret secret',
-  
-  rolling: true, // <-- Set `rolling` to `true`
-  cookie: {  
-      //maxAge: 1*60*60*1000 //10 min.
-      maxAge: 10*1000 //10 sec.
-  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize
-  })
+  }),
+  rolling: true, // <-- Set `rolling` to `true`
+  cookie: {  
+      maxAge: 6000 //10 sec.
+  }
 };
 
 app.use(session(sess));
