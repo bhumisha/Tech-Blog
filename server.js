@@ -13,7 +13,8 @@ const sess = {
   
   rolling: true, // <-- Set `rolling` to `true`
   cookie: {  
-      maxAge: 1*60*60*1000
+      //maxAge: 1*60*60*1000 //10 min.
+      maxAge: 10*1000 //10 sec.
   },
   resave: false,
   saveUninitialized: true,
